@@ -10,20 +10,20 @@
 
 class CreateCostumes < ActiveRecord::Migration[5.1]
   
-    def self.create_table
-      sql = <<-SQL
-      CREATE TABLE IF NOT EXISTS students (
-      id INTEGER PRIMARY KEY,
-      name TEXT,
-      price FLOAT,
-      size TEXT,
-      image_url TEXT,
-      timestamp DATETIME,
-      timestamp DATETIME
-      )
-      SQL
-      ActiveRecord::Base.connection.execute(sql)
-    end
+    # def self.create_table
+    #   sql = <<-SQL
+    #   CREATE TABLE IF NOT EXISTS students (
+    #   id INTEGER PRIMARY KEY,
+    #   name TEXT,
+    #   price FLOAT,
+    #   size TEXT,
+    #   image_url TEXT,
+    #   timestamp DATETIME,
+    #   timestamp DATETIME
+    #   )
+    #   SQL
+    #   ActiveRecord::Base.connection.execute(sql)
+    # end
       
     
     def change
@@ -32,8 +32,8 @@ class CreateCostumes < ActiveRecord::Migration[5.1]
         t.float :price
         t.string :size
         t.string :image_url
-        t.timestamp :create_at
-        t.timestamp :update_at
+        t.timestamp :created_at
+        t.timestamp :updated_at
         
        end
       end 
